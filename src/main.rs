@@ -62,20 +62,20 @@ fn forward(req: &mut Request) -> IronResult<Response> {
 
 #[derive(Serialize)]
 struct Stats {
-    requestsForwarded: u64,
-    targetRequestsPerSecond: f64,
-    averageRequestsPerSecond: f64,
-    maxRequestsPerSecond: f64,
-    bufferSizeInBytes: usize,
+    requests_forwarded: u64,
+    target_requests_per_second: f64,
+    average_requests_per_second: f64,
+    max_requests_per_second: f64,
+    buffer_size_in_bytes: usize,
 }
 
 fn stat_handler(req: &mut Request) -> IronResult<Response> {
     let stats = Stats {
-        requestsForwarded: 345242,
-        targetRequestsPerSecond: 250.,
-        averageRequestsPerSecond: 261.,
-        maxRequestsPerSecond: 342.,
-        bufferSizeInBytes: 5098231,
+        requests_forwarded: 345242,
+        target_requests_per_second: 250.,
+        average_requests_per_second: 261.,
+        max_requests_per_second: 342.,
+        buffer_size_in_bytes: 5098231,
     };
 
     Ok(Response::with((iron::status::Ok, 
